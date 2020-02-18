@@ -1,0 +1,56 @@
+\documentclass[usenames,dvipsnames]{article}
+
+\usepackage{graphicx}
+\usepackage{nopageno}
+\usepackage[top=2cm, bottom=2cm, outer=0cm, inner=0cm]{geometry}
+\usepackage[pages=some]{background}
+\usepackage{datetime}
+
+%\usepackage{xcolor}
+
+\backgroundsetup{
+	scale=1,
+	color=black,
+	opacity=1,
+	angle=0,
+	contents={%
+		\includegraphics[width=\paperwidth,height=\paperheight]{SedaThesisCover}
+	}%
+}
+
+\newdateformat{monthyeardate}{%
+	\monthname[\THEMONTH], \THEYEAR}
+
+\newcommand{\Ttext}[1]{\Huge\textcolor{RoyalBlue}{#1}}
+\newcommand{\Atext}[1]{\Large\textcolor{Emerald}{#1}}
+\newcommand{\Stext}[1]{\Large\textcolor{Plum}{#1}}%Tan
+\newcommand{\Mtext}[1]{\huge\textsc{#1}}
+\newcommand{\AddCont}{	\vspace*{5cm}
+	\centering
+	\Mtext{Master Thesis}\\
+	\vspace{1cm}
+	\Ttext{Master Thesis Title}\\
+	\vspace{1cm}
+	\begin{figure}[th]%[th]
+		\centering
+		\includegraphics[width=16cm,height=5cm]{CoverPageFig}
+	\end{figure}
+	\vspace{1cm}
+	\Large by: \Atext{Full Name}\\
+	Matriculation Number : ------\\
+	\vspace{1cm}
+	\large \textit{Supervisors: }\\
+	\Stext{Supervisors 1}\\
+	\Stext{Supervisors 2}\\
+	\vspace{2cm}
+	\monthyeardate\today
+		%{\large \today}\\[4cm] % Date}
+	}
+
+\begin{document}
+	%\BgThispage
+	\AddCont
+	\newpage
+	\BgThispage
+	\AddCont
+\end{document}
